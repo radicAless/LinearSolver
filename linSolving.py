@@ -3,6 +3,7 @@ import scipy
 import scipy.sparse as sparse
 import sys
 
+# superclass for iterative solvers of linear systems
 class Method:
   
     def bases(self, A, b):    
@@ -35,7 +36,8 @@ class Method:
     
     def update(self,res):
       pass
-   
+
+# solving with Jacobi method
 class Jacobi(Method):
     
     def __init__(self, A, b):
@@ -45,7 +47,8 @@ class Jacobi(Method):
     def update(self,res):
         ris = self.P*res
         return ris
-    
+
+# solving with Gauss-Seidel method
 class Seidel(Method):
 
   def __init__(self, A, b):
@@ -55,7 +58,8 @@ class Seidel(Method):
   def update(self,res):   
     ris = scipy.sparse.linalg.spsolve_triangular(self.P,res,lower= True)
     return ris
-  
+
+# solving with Gradient method
 class Gradiente(Method):
 
   def __init__(self, A, b):
@@ -69,6 +73,7 @@ class Gradiente(Method):
     ris = (alfa/beta)*res
     return ris
 
+# solving with Conjugate Gradient method
 class Coniugato(Method):
 
   def __init__(self, A, b):
