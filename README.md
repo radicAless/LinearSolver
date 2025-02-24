@@ -7,3 +7,5 @@ Solving techniques are implemented in the "linSolving.py" library, which include
 Jacobi, Gauss-Seidel, Gradient and Conjugate Gradient.
 
 "progetto1bis.py" is a simple script where a linear system of choice is solved through the 4 different methods implemented in the library for comparison purpose.
+
+The ".pdf" file is a project report (in Italian), where you can also find a detailed description of the "linSolving.py" library. 
